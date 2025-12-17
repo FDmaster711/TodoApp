@@ -1,0 +1,43 @@
+/* src/components/Header.css */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #330000; /* Borde rojo muy oscuro */
+}
+
+.header-title {
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* El nombre del usuario lo destacamos en rojo */
+.header-title span {
+  color: #ff3333;
+}
+
+.header-logout-button {
+  padding: 8px 20px;
+  background-color: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.header-logout-button:hover {
+  background-color: #ff4d4d;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.4);
+}
