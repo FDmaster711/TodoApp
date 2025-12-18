@@ -1,177 +1,118 @@
 # TodoApp / Aplicación de Tareas
 
-## English
-
-### Project
-TodoApp is a simple full-stack todo application. The repository contains two main parts:
-- Backend: `node2` — Express + Prisma (Postgres) API
-- Frontend: `ToddoApp-Frontend` — React (Vite) + Tailwind CSS
-
-### Features
-- User authentication (register/login)
-- Create, read, update, delete todos
-- Todo priority and state fields (migrated via Prisma)
-
-### Tech stack
-- Backend: Node.js, Express, Prisma, PostgreSQL
-- Frontend: React, Vite, Tailwind CSS
-
-### Project structure (top-level)
-- `node2/` — backend source, Prisma client, migrations
-- `ToddoApp-Frontend/` — frontend source and assets
-
-### Getting started
-Prerequisites: `node` (v16+), `npm` or `pnpm`, PostgreSQL.
-
-Backend (development):
-
-1. Install dependencies
-
-```bash
-cd node2
-npm install
-```
-
-2. Provide environment variables
-
-Create a `.env` file in `node2/` with at least:
-
-```
-DATABASE_URL=postgresql://user:password@localhost:5432/dbname
-JWT_SECRET=your_jwt_secret
-```
-
-3. Run Prisma migrations (if you need to apply migrations locally):
-
-```bash
-cd node2
-npx prisma migrate deploy   # or `npx prisma migrate dev` for local development
-```
-
-4. Start the backend
-
-```bash
-npm run dev
-```
-
-Frontend (development):
-
-1. Install dependencies
-
-```bash
-cd ToddoApp-Frontend
-npm install
-```
-
-2. Start the dev server
-
-```bash
-npm run dev
-```
-
-The frontend expects the backend API to be running. Configure the frontend service endpoints in `ToddoApp-Frontend/src/services` if needed.
-
-### Useful scripts
-- Backend: in `node2/package.json` commonly `dev`, `start`, `migrate` scripts
-- Frontend: in `ToddoApp-Frontend/package.json` commonly `dev`, `build`, `preview`
-
-### Notes
-- Prisma client code is generated into `node2/generated/prisma`.
-- Migrations are stored under `node2/prisma/migrations`.
-
-### Contributing
-- Open an issue or fork and create a pull request. Add clear descriptions for changes.
-
-### License
-Specify your license here (e.g., MIT) or add a `LICENSE` file.
+> 🚀 **PROYECTO DESPLEGADO / DEPLOYED PROJECT**
+>
+> 🔗 **Live Demo:** [https://todo-app-sooty-three-18.vercel.app](https://todo-app-sooty-three-18.vercel.app)
 
 ---
 
-## Español
+### 🔑 Acceso Rápido / Demo Access
+Para probar la aplicación sin registrarte / To test the app without signing up:
+
+- **Usuario / User:** `admin`
+- **Contraseña / Password:** `123456`
+
+---
+
+## 🇪🇸 Español
 
 ### Proyecto
-TodoApp es una aplicación simple de tareas full-stack. El repositorio contiene dos partes principales:
-- Backend: `node2` — API con Express y Prisma (Postgres)
-- Frontend: `ToddoApp-Frontend` — React (Vite) y Tailwind CSS
+TodoApp es una aplicación "Full Stack" para la gestión de tareas. El repositorio contiene dos partes principales:
+- **Backend:** `node2` — API construida con Node.js, Express y Prisma (PostgreSQL). **(Desplegado en Render)**
+- **Frontend:** `ToddoApp-Frontend` — Interfaz de usuario construida con React, Vite y Tailwind CSS. **(Desplegado en Vercel)**
 
-### Funcionalidades
-- Autenticación de usuarios (registro/inicio de sesión)
-- Crear, leer, actualizar y eliminar tareas
-- Campos de prioridad y estado en las tareas (agregados con migraciones de Prisma)
+### Características
+- 🔐 Autenticación segura de usuarios (JWT, registro/login).
+- 📝 Crear, leer, actualizar y eliminar tareas (CRUD).
+- 🚦 Gestión de prioridad y estado de las tareas.
+- ☁️ **Base de datos en la nube:** PostgreSQL alojada en Render.
 
-### Tecnologías
-- Backend: Node.js, Express, Prisma, PostgreSQL
-- Frontend: React, Vite, Tailwind CSS
+### Stack Tecnológico
+- **Frontend:** React, Vite, Tailwind CSS, Axios, React Router.
+- **Backend:** Node.js, Express, Prisma ORM.
+- **Base de Datos:** PostgreSQL.
+- **Despliegue:** Vercel (Frontend) & Render (Backend + DB).
 
-### Estructura (nivel superior)
-- `node2/` — código del backend, cliente Prisma, migraciones
-- `ToddoApp-Frontend/` — código y recursos del frontend
+### Instalación y Ejecución Local
 
-### Cómo ejecutar
-Requisitos: `node` (v16+), `npm` o `pnpm`, PostgreSQL.
+**Requisitos:** `node` (v16+), `npm` o `pnpm`, PostgreSQL.
 
-Backend (desarrollo):
-
-1. Instalar dependencias
+#### 1. Backend (Servidor)
 
 ```bash
 cd node2
 npm install
-```
 
-2. Crear variables de entorno
-
-Crear un archivo `.env` en `node2/` con al menos:
-
-```
+###Crea un archivo .env dentro de la carpeta node2/ con las siguientes variables:
 DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/nombre_bd
 JWT_SECRET=tu_secreto_jwt
-```
+PORT=3000
 
-3. Aplicar migraciones de Prisma (si hace falta):
+##Ejecuta las migraciones y el servidor:
+npx prisma migrate dev  # Crea las tablas en tu DB local
+npm run dev             # Inicia el servidor en modo desarrollo
+
+##2. Frontend (Cliente)
+cd ToddoApp-Frontend
+npm install
+
+##3(Opcional) Crea un archivo .env en ToddoApp-Frontend/:
+VITE_API_URL=http://localhost:3000
+
+###Inicia el frontend:
+npm run dev
+
+###English
+Project
+TodoApp is a simple full-stack todo application. The repository contains two main parts:
+
+Backend: node2 — Express + Prisma (Postgres) API. (Deployed on Render)
+
+Frontend: ToddoApp-Frontend — React (Vite) + Tailwind CSS. (Deployed on Vercel)
+
+Features
+🔐 Secure User authentication (JWT, register/login).
+
+📝 Create, read, update, delete todos.
+
+🚦 Todo priority and state management.
+
+☁️ Cloud Database: PostgreSQL hosted on Render.
+
+Tech stack
+Frontend: React, Vite, Tailwind CSS, Axios, React Router.
+
+Backend: Node.js, Express, Prisma ORM.
+
+Database: PostgreSQL.
+
+Deployment: Vercel (Frontend) & Render (Backend + DB).
+
+Getting Started (Local Setup)
+Prerequisites: node (v16+), npm or pnpm, PostgreSQL..
+
+#### 1. Backend (Server)
 
 ```bash
 cd node2
-npx prisma migrate deploy   # o `npx prisma migrate dev` para desarrollo local
-```
+npm install
 
-4. Iniciar el backend
+###Create a .env file inside node2/ with:
+DATABASE_URL=postgresql://usuario:contraseña@localhost:5432/nombre_bd
+JWT_SECRET=tu_secreto_jwt
+PORT=3000
 
-```bash
-npm run dev
-```
+##Run migrations and start server:
+npx prisma migrate dev  
+npm run dev             
 
-Frontend (desarrollo):
-
-1. Instalar dependencias
-
-```bash
+##2. Frontend (Client)
 cd ToddoApp-Frontend
 npm install
-```
 
-2. Iniciar el servidor de desarrollo
+##3(Opcional) (Optional) Create a .env file inside ToddoApp-Frontend/:
+VITE_API_URL=http://localhost:3000
 
-```bash
+###Start the client:
 npm run dev
-```
 
-El frontend espera que la API del backend esté en ejecución. Configure los endpoints en `ToddoApp-Frontend/src/services` si es necesario.
-
-### Scripts útiles
-- Backend: en `node2/package.json` usualmente `dev`, `start`, `migrate`
-- Frontend: en `ToddoApp-Frontend/package.json` usualmente `dev`, `build`, `preview`
-
-### Notas
-- El cliente de Prisma se genera en `node2/generated/prisma`.
-- Las migraciones están en `node2/prisma/migrations`.
-
-### Contribuir
-- Abra un issue o haga fork y un pull request. Describa claramente los cambios.
-
-### Licencia
-Agregue aquí la licencia (por ejemplo MIT) o añada un archivo `LICENSE`.
-
----
-
-If you want, I can: add a short demo GIF, expand setup steps for Docker, or add CI instructions.
