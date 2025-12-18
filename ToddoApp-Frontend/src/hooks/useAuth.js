@@ -16,6 +16,7 @@ export const useLogin = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         setError(null);
         setLoading(true);
 
@@ -24,7 +25,8 @@ export const useLogin = () => {
         navigate("/");  
 
         }catch(err){
-            setError(err);
+            const errorMessage = err.response?.data?.message || err.message || "Error login in user";
+    setError(errorMessage);
 
         }finally {
         setLoading(false);
