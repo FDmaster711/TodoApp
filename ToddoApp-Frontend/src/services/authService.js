@@ -10,7 +10,8 @@ export const LoginService = async (username,password) => {
         }
         return response.data
     }catch(err){
-     throw err.response?.data?.message || "Error connecting to the server";
+     const message = err?.response?.data?.message || err?.message || "Error connecting to the server";
+     throw new Error(message);
     }
 };
 

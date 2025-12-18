@@ -25,8 +25,15 @@ export const useLogin = () => {
         navigate("/");  
 
         }catch(err){
-            const errorMessage = err.response?.data?.message || err.message || "Error login in user";
-    setError(errorMessage);
+            let errorMessage = "Error logging in user";
+            if (typeof err === "string") {
+                errorMessage = err;
+            } else if (err instanceof Error) {
+                errorMessage = err.message || errorMessage;
+            } else {
+                errorMessage = err?.response?.data?.message || err?.message || errorMessage;
+            }
+            setError(errorMessage);
 
         }finally {
         setLoading(false);
